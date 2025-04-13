@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events & Programs | Heritage Town Museum</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">[LOGO]</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="exhibits.html">Exhibits</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="events-page">
+    <section class="events-hero">
+      <h1>Events & Programs</h1>
+    </section>
+
+    <section class="event-filter">
+      <label for="event-category">Filter:</label>
+      <select id="event-category">
+        <option value="all">All</option>
+        <option value="upcoming">Upcoming</option>
+        <option value="past">Past</option>
+        <option value="programs">Programs</option>
+        <option value="tours">Tours</option>
+      </select>
+    </section>
+
+    <section class="calendar-view">
+      <h2>Calendar View</h2>
+      <div class="calendar-container">
+          <div class="calendar-header">
+              <button class="calendar-nav calendar-prev">←</button>
+              <div class="calendar-title"></div>
+              <button class="calendar-nav calendar-next">→</button>
+          </div>
+          <div class="calendar-grid"></div>
+      </div>
+  </section>
+
+    <section class="upcoming-events">
+      <h2>Upcoming Events</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <img src="images/events.jpg" alt="Event 1">
+          <div class="event-info">
+            <span class="event-date">April 20, 2025</span>
+            <h3>Event Title 1</h3>
+            <p>Brief description of the upcoming event.</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/events.jpg" alt="Event 2">
+          <div class="event-info">
+            <span class="event-date">April 27, 2025</span>
+            <h3>Event Title 2</h3>
+            <p>Brief description of the upcoming event.</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/events.jpg" alt="Event 3">
+          <div class="event-info">
+            <span class="event-date">May 10, 2025</span>
+            <h3>Event Title 3</h3>
+            <p>Brief description of the upcoming event.</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+        <div class="event-card">
+          <img src="images/events.jpg" alt="Event 4">
+          <div class="event-info">
+            <span class="event-date">May 18, 2025</span>
+            <h3>Event Title 4</h3>
+            <p>Brief description of the upcoming event.</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="educational-programs">
+      <h2>Educational Programs</h2>
+      <ul>
+        <li><strong>History Alive! Workshops:</strong> Weekly interactive sessions for school groups.</li>
+        <li><strong>Curator Talks:</strong> Monthly expert talks on collections and preservation.</li>
+        <li><strong>Kids’ Discovery Camp:</strong> A hands-on learning program every summer.</li>
+        <li><strong>Docent Training:</strong> Learn how to become a volunteer tour guide.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2025 Heritage Town Museum</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Sitemap</a>
+    </div>
+    <div class="social-icons">
+      <!-- Social media icons here -->
+    </div>
+  </footer>
+<script src="./script.js"></script>
+</body>
+</html>

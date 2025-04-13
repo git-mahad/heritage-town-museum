@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media Gallery | Heritage Town Museum</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo">[LOGO]</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="exhibits.html">Exhibits</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="media.html" class="active">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="media-gallery-page">
+
+    <section class="media-hero">
+      <h1>Media Gallery</h1>
+    </section>
+
+    <section class="media-filter">
+      <label for="media-category">Filter:</label>
+      <select id="media-category">
+        <option value="all">All</option>
+        <option value="exhibits">Exhibits</option>
+        <option value="events">Events</option>
+        <option value="historical">Historical Photos</option>
+      </select>
+    </section>
+
+    <section class="featured-image">
+      <img id="mainImage" src="images/hero.jpg" alt="Featured" />
+    </section>
+
+    <section class="thumbnail-grid">
+      <div class="thumbs">
+        <img src="images/news.jpg" alt="Media 1" onclick="showImage(this)">
+        <img src="images/events.jpg" alt="Media 2" onclick="showImage(this)">
+        <img src="images/news.jpg" alt="Media 3" onclick="showImage(this)">
+        <img src="images/events.jpg" alt="Media 4" onclick="showImage(this)">
+        <img src="images/events.jpg" alt="Media 5" onclick="showImage(this)">
+      </div>
+      <div class="thumbs">
+        <img src="images/news.jpg" alt="Media 6" onclick="showImage(this)">
+        <img src="images/events.jpg" alt="Media 7" onclick="showImage(this)">
+        <img src="images/hero.jpg" alt="Media 8" onclick="showImage(this)">
+        <img src="images/events.jpg" alt="Media 9" onclick="showImage(this)">
+        <img src="images/news.jpg" alt="Media 10" onclick="showImage(this)">
+      </div>
+    </section>
+
+    <section class="pagination">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <span>...</span>
+      <a href="#">Next</a>
+    </section>
+
+    <section class="virtual-tour">
+      <h2>Virtual Tour</h2>
+      <div class="tour-embed">
+        <iframe width="100%" height="360" src="https://www.youtube.com/embed/Scxs7L0vhZ4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="start-tour-btn">Start Tour</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Copyright © 2025 Heritage Town Museum</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Sitemap</a>
+    </div>
+    <div class="social-icons">
+      <!-- Add icons if needed -->
+    </div>
+  </footer>
+  
+<script src="./script.js"></script>
+</body>
+</html>
