@@ -1,5 +1,6 @@
+// index.html
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
     const mobileNavToggle = () => {
       const header = document.querySelector('header');
       const nav = document.querySelector('nav ul');
@@ -13,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.toggle('active');
       });
   
-      // Close mobile menu when clicking on a link
       document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('active');
@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     };
   
-    // Smooth Scrolling for Anchor Links
     const smoothScroll = () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     };
   
-    // Highlight Current Page in Navigation
     const highlightCurrentPage = () => {
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('nav ul li a').forEach(link => {
@@ -48,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     };
   
-    // Image Hover Effects
     const imageHoverEffects = () => {
       document.querySelectorAll('.highlight-box img').forEach(img => {
         img.addEventListener('mouseenter', () => {
@@ -61,15 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
     };
-  
-    // Visitor Counter (simulated)
+
     const visitorCounter = () => {
       const counterElement = document.createElement('div');
       counterElement.className = 'visitor-counter';
       counterElement.innerHTML = '<span>Visitors Today: </span><span id="count">0</span>';
       document.querySelector('footer').prepend(counterElement);
   
-      // Simulate counting up
       let count = 0;
       const target = Math.floor(Math.random() * 200) + 50;
       const interval = setInterval(() => {
@@ -82,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 50);
     };
   
-    // Initialize all functions
     const init = () => {
       mobileNavToggle();
       smoothScroll();
@@ -90,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
       imageHoverEffects();
       visitorCounter();
   
-      // Add current year to footer
       document.querySelector('footer p').innerHTML = 
         `Copyright © ${new Date().getFullYear()} Heritage Town Museum`;
     };
@@ -103,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //   about.html
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
     const setupMobileNav = () => {
       const header = document.querySelector('header');
       const nav = document.querySelector('nav ul');
@@ -117,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.toggle('active');
       });
   
-      // Close mobile menu when clicking on a link
       document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('active');
@@ -126,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     };
   
-    // Team Member Hover Effects
     const setupTeamHover = () => {
       const teamMembers = document.querySelectorAll('.team-member');
       teamMembers.forEach(member => {
@@ -141,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     };
   
-    // Timeline Builder
     const buildTimeline = () => {
       const timelineData = [
         { year: '1925', event: 'Museum founded by local historians' },
@@ -165,13 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     };
   
-    // Current Year in Footer
     const updateFooterYear = () => {
       const footerYear = document.querySelector('footer p');
       footerYear.textContent = `Copyright © ${new Date().getFullYear()} Heritage Town Museum`;
     };
   
-    // Initialize all functions
     const init = () => {
       setupMobileNav();
       setupTeamHover();
@@ -186,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // exhibit
 
   document.addEventListener('DOMContentLoaded', function() {
-    // ==================== MOBILE NAVIGATION ====================
     const setupMobileNav = () => {
         const header = document.querySelector('header');
         const nav = document.querySelector('nav ul');
@@ -203,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         hamburger.addEventListener('click', toggleMenu);
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', () => {
                 if (nav.classList.contains('active')) {
@@ -218,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const filterSelect = document.getElementById('category');
         const exhibitCards = document.querySelectorAll('.exhibit-card');
 
-        // Assign categories to exhibit cards (simulated data)
         const categories = ['permanent', 'temporary', 'permanent', 'temporary', 'permanent', 'temporary'];
         exhibitCards.forEach((card, index) => {
             card.dataset.category = categories[index] || 'permanent';
@@ -230,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
             exhibitCards.forEach(card => {
                 const shouldShow = selectedValue === 'all' || card.dataset.category === selectedValue;
                 
-                // Smooth transition effects
                 if (shouldShow) {
                     card.style.display = 'block';
                     setTimeout(() => {
@@ -308,12 +291,10 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.querySelector('.modal-exhibit-img').src = imgSrc;
         modal.querySelector('.modal-exhibit-img').alt = imgAlt;
         
-        // Show modal
         modal.style.display = 'block';
         document.body.classList.add('no-scroll');
     };
 
-    // ==================== PAGINATION ====================
     const setupPagination = () => {
         const paginationLinks = document.querySelectorAll('.pagination a');
         
@@ -321,21 +302,17 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                // Remove active class from all links
                 paginationLinks.forEach(l => l.classList.remove('active'));
                 
-                // Add active class to clicked link if it's a number
                 if (!isNaN(parseInt(link.textContent))) {
                     link.classList.add('active');
                 }
                 
-                // In a real implementation, this would load new content
                 console.log(`Loading page: ${link.textContent}`);
             });
         });
     };
 
-    // ==================== FEATURED COLLECTION ====================
     const setupFeaturedCollection = () => {
         const featuredBtn = document.querySelector('.featured-collection .btn');
         
@@ -350,13 +327,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // ==================== FOOTER YEAR UPDATE ====================
     const updateFooterYear = () => {
         const footerYear = document.querySelector('footer p');
         footerYear.textContent = `Copyright © ${new Date().getFullYear()} Heritage Town Museum`;
     };
 
-    // ==================== INITIALIZATION ====================
     const init = () => {
         setupMobileNav();
         setupExhibitFilter();
@@ -372,7 +347,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //   events.html
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ==================== MOBILE NAVIGATION ====================
     const setupMobileNav = () => {
         const header = document.querySelector('header');
         const nav = document.querySelector('nav ul');
@@ -404,7 +378,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const filterSelect = document.getElementById('event-category');
         const eventCards = document.querySelectorAll('.event-card');
 
-        // Assign categories to event cards
         const categories = ['upcoming', 'tours', 'programs', 'upcoming'];
         eventCards.forEach((card, index) => {
             card.dataset.category = categories[index] || 'upcoming';
@@ -416,7 +389,6 @@ document.addEventListener('DOMContentLoaded', function() {
             eventCards.forEach(card => {
                 const shouldShow = selectedValue === 'all' || card.dataset.category === selectedValue;
                 
-                // Smooth transition effects
                 if (shouldShow) {
                     card.style.display = 'block';
                     setTimeout(() => {
@@ -434,7 +406,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // ==================== INTERACTIVE CALENDAR ====================
     const setupCalendar = () => {
         const calendarContainer = document.querySelector('.calendar-container');
         const calendarTitle = document.querySelector('.calendar-title');
@@ -446,7 +417,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentMonth = currentDate.getMonth();
         let currentYear = currentDate.getFullYear();
         
-        // Sample events data (would come from API in production)
         const events = {
             '2025-4-20': 'Spring Exhibition Opening',
             '2025-4-27': 'Guided Historical Tour',
@@ -455,16 +425,13 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         function renderCalendar() {
-            // Set calendar title
             calendarTitle.textContent = new Date(currentYear, currentMonth).toLocaleDateString('en-US', {
                 month: 'long',
                 year: 'numeric'
             });
             
-            // Clear previous days
             calendarGrid.innerHTML = '';
             
-            // Add day headers
             const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
             dayNames.forEach(day => {
                 const dayElement = document.createElement('div');
@@ -499,14 +466,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     dayElement.classList.add('today');
                 }
                 
-                // Check if has event
                 if (events[dateStr]) {
                     dayElement.classList.add('has-event');
                     dayElement.dataset.event = events[dateStr];
                     dayElement.dataset.eventDate = `${day}/${currentMonth + 1}/${currentYear}`;
                 }
                 
-                // Add click handler
                 dayElement.addEventListener('click', handleCalendarDayClick);
                 
                 calendarGrid.appendChild(dayElement);
@@ -519,20 +484,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const eventDate = dayElement.dataset.eventDate;
             
             if (eventTitle) {
-                // Remove previous selection
+
                 document.querySelectorAll('.calendar-day.selected').forEach(el => {
                     el.classList.remove('selected');
                 });
                 
-                // Select current day
                 dayElement.classList.add('selected');
                 
-                // Show event details
                 showEventModal(eventTitle, eventDate);
             }
         }
         
-        // Navigation handlers
         prevBtn.addEventListener('click', () => {
             currentMonth--;
             if (currentMonth < 0) {
@@ -551,13 +513,11 @@ document.addEventListener('DOMContentLoaded', function() {
             renderCalendar();
         });
         
-        // Initial render
         renderCalendar();
     };
 
     // ==================== EVENT MODAL ====================
     const showEventModal = (eventTitle, eventDate) => {
-        // Create modal if it doesn't exist
         let modal = document.getElementById('event-modal');
         if (!modal) {
             modal = document.createElement('div');
@@ -577,7 +537,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             document.body.appendChild(modal);
             
-            // Close modal handlers
             modal.querySelector('.close-modal').addEventListener('click', () => {
                 modal.style.display = 'none';
                 document.body.classList.remove('no-scroll');
@@ -594,20 +553,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        
-        // Update modal content
+
         modal.querySelector('#modal-event-title').textContent = eventTitle;
         modal.querySelector('.modal-event-date').textContent = eventDate;
         
-        // Show modal
         modal.style.display = 'block';
         document.body.classList.add('no-scroll');
     };
 
-    // ==================== EVENT CARD INTERACTIONS ====================
     const setupEventCards = () => {
         document.querySelectorAll('.event-card').forEach(card => {
-            // Hover effects
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-10px)';
                 card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
@@ -618,7 +573,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
             });
             
-            // Click handler for "More Info"
             const moreInfo = card.querySelector('a');
             if (moreInfo) {
                 moreInfo.addEventListener('click', (e) => {
@@ -631,13 +585,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // ==================== FOOTER YEAR UPDATE ====================
     const updateFooterYear = () => {
         const footerYear = document.querySelector('footer p');
         footerYear.textContent = `Copyright © ${new Date().getFullYear()} Heritage Town Museum`;
     };
 
-    // ==================== INITIALIZATION ====================
     const init = () => {
         setupMobileNav();
         setupEventFilter();
@@ -651,7 +603,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // media html
 
-// Switch main featured image on thumbnail click
 function showImage(imgElement) {
   const mainImage = document.getElementById("mainImage");
   mainImage.src = imgElement.src;
@@ -666,7 +617,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add category tags via data attributes (dummy for example)
   const categories = ["exhibits", "events", "historical"];
   thumbnails.forEach((thumb, index) => {
-    thumb.dataset.category = categories[index % categories.length]; // Loop categories
+    thumb.dataset.category = categories[index % categories.length];
   });
 
   filter.addEventListener("change", () => {
@@ -681,7 +632,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Scroll to the virtual tour video on "Start Tour" button click
   const tourBtn = document.querySelector(".start-tour-btn");
   const tourSection = document.querySelector(".virtual-tour");
 
@@ -694,7 +644,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form form");
-  const errorContainer = document.getElementById("form-error-message"); // For displaying global errors
+  const errorContainer = document.getElementById("form-error-message");
 
   // Error handling function to display error messages
   const showError = (element, message) => {
@@ -704,13 +654,11 @@ document.addEventListener("DOMContentLoaded", () => {
     element.parentNode.appendChild(errorElement);
   };
 
-  // Clear all error messages
   const clearErrors = () => {
     const errors = document.querySelectorAll(".error-message");
     errors.forEach((error) => error.remove());
   };
 
-  // Real-time validation for form fields
   form.name.addEventListener("keyup", function () {
     if (form.name.value.trim() === "") {
       showError(form.name, "Name is required.");
@@ -743,44 +691,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Form submission handling
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent actual form submission
+    e.preventDefault(); 
 
-    // Get form values
     const name = form.name.value.trim();
     const email = form.email.value.trim();
     const subject = form.subject.value.trim();
     const message = form.message.value.trim();
     const subscribed = form.subscribe.checked;
 
-    // Clear previous errors
     clearErrors();
-    errorContainer.textContent = ""; // Clear global error message
+    errorContainer.textContent = ""; 
 
-    // Check if all required fields are filled
     if (!name || !email || !subject || !message) {
       errorContainer.textContent = "Please fill in all required fields.";
       return;
     }
 
-    // Basic email format check using regex
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       showError(form.email, "Please enter a valid email address.");
       return;
     }
 
-    // Confirmation message
     let confirmation = `Thank you, ${name}!\n\nYour message has been received.\nSubject: ${subject}`;
     if (subscribed) {
       confirmation += `\n\n✅ You are subscribed to our newsletter.`;
     }
 
-    // Show confirmation in an alert box
     alert(confirmation);
 
-    // For demonstration, log the form data to console
     console.log({
       name,
       email,
@@ -789,13 +729,11 @@ document.addEventListener("DOMContentLoaded", () => {
       subscribed,
     });
 
-    // Optional: Reset the form after submission (with a slight delay)
     setTimeout(() => {
-      form.reset(); // Clear form after user sees the confirmation message
-    }, 1000); // Delay to allow user to read the confirmation
+      form.reset();
+    }, 1000);
   });
 
-  // Scroll to map section when "Visit Us" title is clicked
   const visitHeader = document.querySelector(".contact-details h2");
   const mapSection = document.querySelector(".map-section");
 
