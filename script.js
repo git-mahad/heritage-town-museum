@@ -690,29 +690,84 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
+// contact.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form form");
+  const errorContainer = document.getElementById("form-error-message"); // For displaying global errors
 
+  // Error handling function to display error messages
+  const showError = (element, message) => {
+    const errorElement = document.createElement("div");
+    errorElement.classList.add("error-message");
+    errorElement.textContent = message;
+    element.parentNode.appendChild(errorElement);
+  };
+
+  // Clear all error messages
+  const clearErrors = () => {
+    const errors = document.querySelectorAll(".error-message");
+    errors.forEach((error) => error.remove());
+  };
+
+  // Real-time validation for form fields
+  form.name.addEventListener("keyup", function () {
+    if (form.name.value.trim() === "") {
+      showError(form.name, "Name is required.");
+    } else {
+      clearErrors();
+    }
+  });
+
+  form.email.addEventListener("keyup", function () {
+    if (form.email.value.trim() === "") {
+      showError(form.email, "Email is required.");
+    } else {
+      clearErrors();
+    }
+  });
+
+  form.subject.addEventListener("keyup", function () {
+    if (form.subject.value.trim() === "") {
+      showError(form.subject, "Subject is required.");
+    } else {
+      clearErrors();
+    }
+  });
+
+  form.message.addEventListener("keyup", function () {
+    if (form.message.value.trim() === "") {
+      showError(form.message, "Message is required.");
+    } else {
+      clearErrors();
+    }
+  });
+
+  // Form submission handling
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent actual form submission
 
+    // Get form values
     const name = form.name.value.trim();
     const email = form.email.value.trim();
     const subject = form.subject.value.trim();
     const message = form.message.value.trim();
     const subscribed = form.subscribe.checked;
 
+    // Clear previous errors
+    clearErrors();
+    errorContainer.textContent = ""; // Clear global error message
+
+    // Check if all required fields are filled
     if (!name || !email || !subject || !message) {
-      alert("Please fill in all required fields.");
+      errorContainer.textContent = "Please fill in all required fields.";
       return;
     }
 
-    // Basic email format check
+    // Basic email format check using regex
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
+      showError(form.email, "Please enter a valid email address.");
       return;
     }
 
@@ -722,21 +777,25 @@ document.addEventListener("DOMContentLoaded", () => {
       confirmation += `\n\n✅ You are subscribed to our newsletter.`;
     }
 
+    // Show confirmation in an alert box
     alert(confirmation);
 
-    // For demonstration, log to console (in real case, you’d POST this data)
+    // For demonstration, log the form data to console
     console.log({
       name,
       email,
       subject,
       message,
-      subscribed
+      subscribed,
     });
 
-    form.reset(); // Optional: clear form after submission
+    // Optional: Reset the form after submission (with a slight delay)
+    setTimeout(() => {
+      form.reset(); // Clear form after user sees the confirmation message
+    }, 1000); // Delay to allow user to read the confirmation
   });
 
-  // Optional: scroll to map when someone clicks 'Visit Us' title
+  // Scroll to map section when "Visit Us" title is clicked
   const visitHeader = document.querySelector(".contact-details h2");
   const mapSection = document.querySelector(".map-section");
 
