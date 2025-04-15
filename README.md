@@ -43,14 +43,13 @@ Maximum layout width, 6-column thumbnails, enhanced padding
 1. Replace Placeholder Images & Logo
 This project includes sample images and a generic logo.
 
-Update all <img src="..."> tags with your original content.
+- Update all `<img src="...">` tags with your **original content**.
+- Optimize images for better performance.
+- Replace logo with your brand asset.
 
-Optimize images for better performance.
+### 2. Replace Dummy Social Media Links
+In `contact.html`, the "Follow Us" section uses dummy `#` links.  
+You **must update** these with your **actual social media URLs**, for example:
 
-Replace logo with your brand asset.
-
-2. Replace Dummy Social Media Links
-In contact.html, the "Follow Us" section uses dummy # links.
-You must update these with your actual social media URLs
-
-
+```html
+<a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
