@@ -22,20 +22,10 @@ A responsive and interactive media gallery built with HTML and CSS, designed to 
 - Uses `@media` queries at:
   - `min-width: 768px` for tablets
   - `min-width: 1024px` for desktops
-- Navigation uses `.active` class to style the current page link.
-
-```css
-nav a.active {
-  font-weight: bold;
-  color: #0066cc;
-  border-bottom: 2px solid #0066cc;
-  background-color: #e6f0ff;
-  padding-bottom: 0.2rem;
-}
 
 
-📱 Responsive Behavior
-Mobile (default):
+## 📱 Responsive Behavior
+    
 
 Stack layout with 3-column thumbnails
 
