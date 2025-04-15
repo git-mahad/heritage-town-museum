@@ -22,45 +22,27 @@ A responsive and interactive media gallery built with HTML and CSS, designed to 
 - Uses `@media` queries at:
   - `min-width: 768px` for tablets
   - `min-width: 1024px` for desktops
-- Navigation uses `.active` class to style the current page link.
 
-```css
-nav a.active {
-  font-weight: bold;
-  color: #0066cc;
-  border-bottom: 2px solid #0066cc;
-  background-color: #e6f0ff;
-  padding-bottom: 0.2rem;
-}
+## 📱 Responsive Behavior
 
+- **Mobile (default)**: Stack layout with 3-column thumbnails.
+- **Tablet (≥768px)**: Improved spacing, 4-column thumbnails.
+- **Desktop (≥1024px)**: Maximum layout width, 6-column thumbnails, enhanced padding.
 
-📱 Responsive Behavior
-Mobile (default):
+## 🖼️ Replace Placeholder Content
 
-Stack layout with 3-column thumbnails
+> ⚠️ **Important Customizations Required Before Deployment**
 
-Tablet (≥768px):
-
-Improved spacing, 4-column thumbnails
-
-Desktop (≥1024px):
-
-Maximum layout width, 6-column thumbnails, enhanced padding
-
-🖼️ Replace Placeholder Content
-⚠️ Important Customizations Required Before Deployment
-
-1. Replace Placeholder Images & Logo
+### 1. Replace Placeholder Images & Logo
 This project includes sample images and a generic logo.
 
-Update all <img src="..."> tags with your original content.
+- Update all `<img src="...">` tags with your **original content**.
+- Optimize images for better performance.
+- Replace logo with your brand asset.
 
-Optimize images for better performance.
+### 2. Replace Dummy Social Media Links
+In `contact.html`, the "Follow Us" section uses dummy `#` links.  
+You **must update** these with your **actual social media URLs**, for example:
 
-Replace logo with your brand asset.
-
-2. Replace Dummy Social Media Links
-In contact.html, the "Follow Us" section uses dummy # links.
-You must update these with your actual social media URLs
-
-
+```html
+<a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
