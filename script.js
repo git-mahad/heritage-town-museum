@@ -730,19 +730,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // let confirmation = `Thank you, ${name}!\n\nYour message has been received.\nSubject: ${subject}`;
-    // if (subscribed) {
-    //   confirmation += `\n\n✅ You are subscribed to our newsletter.`;
-    // }
-
-    // alert(confirmation);
-
     console.log({
       name,
       email,
       subject,
       message,
-      // subscribed,
     });
 
     setTimeout(() => {
