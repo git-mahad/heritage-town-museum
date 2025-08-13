@@ -2,12 +2,12 @@
 
 A responsive and interactive media gallery built with HTML and CSS, designed to work seamlessly across mobile, tablet, and desktop devices.
 
-## 📁 Project Structure
+## Project Structure
 
-📁 project-root/ │ ├── index.html ├── media.html ├── contact.html ├── styles.css └── README.md
+ project-root/ │ ├── index.html ├── media.html ├── contact.html ├── styles.css └── README.md
 
 
-## 🎯 Features
+## Features
 
 - **Responsive Layout**: Adapts beautifully to mobile, tablet, and desktop screen sizes using media queries.
 - **Media Filtering**: Dropdown-based filter UI for sorting media.
@@ -17,14 +17,14 @@ A responsive and interactive media gallery built with HTML and CSS, designed to 
 - **Virtual Tour**: Embedded iframe section for virtual experiences.
 - **Active Navigation Tab**: Highlights the currently active tab in the navigation bar.
 
-## 💅 Styling Highlights
+## Styling Highlights
 
 - Uses `@media` queries at:
   - `min-width: 768px` for tablets
   - `min-width: 1024px` for desktops
 
 
-## 📱 Responsive Behavior
+## Responsive Behavior
     
 
 Stack layout with 3-column thumbnails
@@ -36,9 +36,8 @@ Improved spacing, 4-column thumbnails
 Desktop (≥1024px):
 
 Maximum layout width, 6-column thumbnails, enhanced padding
-
-🖼️ Replace Placeholder Content
-⚠️ Important Customizations Required Before Deployment
+ Replace Placeholder Content
+ Important Customizations Required Before Deployment
 
 1. Replace Placeholder Images & Logo
 This project includes sample images and a generic logo.
